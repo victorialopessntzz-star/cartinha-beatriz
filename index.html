@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feliz aniversário, Beatriz! 💗</title>
+<style>
+body {
+  margin:0; min-height:100vh; display:grid; place-items:center;
+  padding:25px 15px; box-sizing:border-box;
+  background:linear-gradient(135deg,#ffe5ef,#f8c5d9,#fff0f5);
+  color:#934c6c; font-family:Georgia,serif; text-align:center;
+}
+main { width:min(100%,480px); }
+h1 { font-size:34px; font-weight:normal; }
+.intro { font-family:Arial; line-height:1.7; }
+button { border:0; background:none; cursor:pointer; width:100%; }
+.envelope { position:relative; height:210px; margin:35px auto; max-width:320px; }
+.back { position:absolute; inset:0; background:#df9db8; border-radius:12px; }
+.paper { position:absolute; left:8%; width:84%; height:170px; bottom:15px; background:white; transition:.8s; }
+.front { position:absolute; inset:0; background:#f3b9d0; clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%); }
+.flap { position:absolute; inset:0; background:#f9d5e2; clip-path:polygon(0 0,100% 0,50% 58%); transition:.7s; }
+.seal { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#cc7197; color:white; border-radius:50%; padding:14px; font-size:24px; }
+.open .flap { transform:rotateX(180deg); }
+.open .paper { transform:translateY(-90px); }
+.open .seal { opacity:0; }
+.letter { display:none; background:#fffafd; padding:25px; border-radius:18px; line-height:1.9; text-align:left; box-shadow:0 8px 25px #a64b7120; }
+.letter.show { display:block; animation:appear .8s; }
+.letter h2 { text-align:center; color:#c76b91; font-weight:normal; }
+.sign { text-align:right; color:#c76b91; }
+@keyframes appear { from {opacity:0;transform:translateY(15px)} to {opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+<main>
+<p>♡ UMA SURPRESA ESPECIAL ♡</p>
+<h1>Feliz aniversário, Beatriz! 🎂</h1>
+<p class="intro">Preparei uma cartinha para você.<br>Clique no envelope para abrir! 💌</p>
+
+<button id="btn" aria-label="Abrir envelope">
+<div class="envelope" id="env">
+<div class="back"></div>
+<div class="paper">💗</div>
+<div class="front"></div>
+<div class="flap"></div>
+<div class="seal">♡</div>
+</div>
+</button>
+<p>♡ clique no envelope ♡</p>
+
+<section class="letter" id="letter">
+<h2>Para Beatriz 💗</h2>
+<p>Feliz aniversário meu amoooor, que Deus te dê muitos anos de vida e saúde, que vc continue sendo essa pessoa maravilhosa e carinhosa, que vc é, agradeço por ter vc na minha vida, obrigado por todos os momentos, risadas, brincadeiras, e todas as nossas palhaçadas, vc é uma das melhores pessoas que eu conheci e sou muito grata por ter vc em minha vida, te amooo, e parabéns vd💞🥳</p>
+<p class="sign">Com carinho! 💌</p>
+</section>
+<p>Feito com carinho 💗</p>
+</main>
+<script>
+document.getElementById("btn").onclick = function() {
+ document.getElementById("env").classList.add("open");
+ document.getElementById("letter").classList.add("show");
+ document.getElementById("letter").scrollIntoView({behavior:"smooth"});
+ this.disabled = true;
+};
+</script>
+</body>
+  </html>
+  
